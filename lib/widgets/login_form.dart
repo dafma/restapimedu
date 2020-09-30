@@ -17,8 +17,11 @@ class _LoginFormState extends State<LoginForm> {
         child: Column(
         children:<Widget>[
           TextFormField(
-            decoration: InputDecoration(labelText: "EMAIL ADDRESS"),
-          )
+            decoration: InputDecoration(
+              labelText: "EMAIL ADDRESS",
+              labelStyle: TextStyle(color: Colors.black45, fontWeight: FontWeight.w500)
+            ),
+          ),
         ]
       ),
     );
