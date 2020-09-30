@@ -20,7 +20,12 @@ class InputText extends StatelessWidget {
       obscureText: this.obscureText,
           decoration: InputDecoration(           
             labelText: label,
-            border: this.borderEnabled ?  null: InputBorder.none,
+            contentPadding: EdgeInsets.symmetric(vertical: 5),
+            border: this.borderEnabled ?  UnderlineInputBorder(
+              borderSide: BorderSide(
+                color : Colors.black12
+              )
+            ): InputBorder.none,
             labelStyle: TextStyle(
               color: Colors.black45, 
               fontWeight: FontWeight.w500)

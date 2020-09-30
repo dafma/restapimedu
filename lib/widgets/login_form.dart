@@ -9,6 +9,7 @@ class LoginForm extends StatefulWidget {
 }
 
 class _LoginFormState extends State<LoginForm> {
+
   @override
   Widget build(BuildContext context) {
     return Positioned(
@@ -21,6 +22,11 @@ class _LoginFormState extends State<LoginForm> {
             keyboardType: TextInputType.emailAddress,
             label: "EMAIL ADDRESS"),  
           Container(
+            decoration: BoxDecoration(
+              border: Border(bottom: BorderSide(
+                color: Colors.black12
+              ))
+            ),
             child: Row(
               children: [
                 Expanded(
@@ -30,9 +36,24 @@ class _LoginFormState extends State<LoginForm> {
                     label: "PASSWORD"
                   ),
                 ),
+                FlatButton(
+                  padding: EdgeInsets.symmetric(vertical:10),
+                  onPressed: (){}, 
+                  child: Text("Forgot the Password", style: TextStyle(fontWeight: FontWeight.bold)))
               ],
             ),
-          ),        
+          ),
+          SizedBox(height:20),    
+          SizedBox(
+            width: double.infinity,
+              child: FlatButton(
+                //pading al button
+              padding: EdgeInsets.symmetric(vertical:15),  
+              child: Text("Sign In", style: TextStyle(color: Colors.white),),
+              onPressed: (){},
+              color: Colors.pinkAccent
+            ),
+          )    
         ]
       ),
     );
