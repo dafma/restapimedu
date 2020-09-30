@@ -1,3 +1,4 @@
+import 'package:curso_rest_api_loginv2/utils/responsive.dart';
 import 'package:curso_rest_api_loginv2/widgets/circle.dart';
 import 'package:curso_rest_api_loginv2/widgets/icon_container.dart';
 
@@ -13,8 +14,11 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    
 
-    final Size size = MediaQuery.of(context).size;
+    final Responsive responsive = Responsive.of(context);
+    final double pinkSize = responsive.wp(80);
+    final double orangeSize = responsive.wp(80);
 
     return Scaffold(
       body: Container(
@@ -25,10 +29,10 @@ class _HomePageState extends State<HomePage> {
           alignment: Alignment.center,
           children: <Widget>[
             Positioned(
-              top: -(size.width * 0.8) * 0.2,
-              right: -(size.width * 0.8) * 0.1,
+              top: -(responsive.wp(80)) * 0.2,
+              right: -(responsive.wp(80)) * 0.1,
               child: Circle(
-                size: size.width * 0.8,
+                size: responsive.wp(80),
                 colors: [
                   Colors.pinkAccent,
                   Colors.pink,
@@ -36,10 +40,10 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Positioned(
-              top: -(size.width * 0.4) * 0.4,
-              left: -(size.width * 0.5) * 0.2,
+              top: -(responsive.wp(40)) * 0.4,
+              left: -(responsive.wp(50)) * 0.2,
               child: Circle(
-                size: size.width * 0.6,
+                size: responsive.wp(60),
                 colors: [
                   Colors.orange,
                   Colors.deepOrangeAccent,
@@ -48,9 +52,19 @@ class _HomePageState extends State<HomePage> {
             ),
             Positioned(
               top: 100,
-              child: IconContainer(
-                size: size.width * 0.25,
-                
+              child: Column(
+                  children:<Widget>[
+                    IconContainer(
+                      size: responsive.wp(17),
+                    ),
+                    SizedBox(height:responsive.dp(1.6)),
+                    Text("Hello again \n Welcome Back",
+                     textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: responsive.dp(1.6)
+                      ),
+                    )
+                  ] 
               )
             ),
           ]
