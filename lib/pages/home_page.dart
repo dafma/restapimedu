@@ -22,54 +22,61 @@ class _HomePageState extends State<HomePage> {
     final double orangeSize = responsive.wp(80);
 
     return Scaffold(
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
-        color: Colors.white,
-        child: Stack(
-          alignment: Alignment.center,
-          children: <Widget>[
-            Positioned(
-              top: -(responsive.wp(80)) * 0.2,
-              right: -(responsive.wp(80)) * 0.1,
-              child: Circle(
-                size: responsive.wp(80),
-                colors: [
-                  Colors.pinkAccent,
-                  Colors.pink,
-                ]
+      body: GestureDetector(
+        onTap: (){
+          //detectar el click fuera del campo y cerrar el teclado
+          FocusScope.of(context).unfocus();
+
+        },
+        child: Container(
+          width: double.infinity,
+          height: double.infinity,
+          color: Colors.white,
+          child: Stack(
+            alignment: Alignment.center,
+            children: <Widget>[
+              Positioned(
+                top: -(responsive.wp(80)) * 0.2,
+                right: -(responsive.wp(80)) * 0.1,
+                child: Circle(
+                  size: responsive.wp(80),
+                  colors: [
+                    Colors.pinkAccent,
+                    Colors.pink,
+                  ]
+                ),
               ),
-            ),
-            Positioned(
-              top: -(responsive.wp(40)) * 0.4,
-              left: -(responsive.wp(50)) * 0.2,
-              child: Circle(
-                size: responsive.wp(60),
-                colors: [
-                  Colors.orange,
-                  Colors.deepOrangeAccent,
-                ]
+              Positioned(
+                top: -(responsive.wp(40)) * 0.4,
+                left: -(responsive.wp(50)) * 0.2,
+                child: Circle(
+                  size: responsive.wp(60),
+                  colors: [
+                    Colors.orange,
+                    Colors.deepOrangeAccent,
+                  ]
+                ),
               ),
-            ),
-            Positioned(
-              top: 100,
-              child: Column(
-                  children:<Widget>[
-                    IconContainer(
-                      size: responsive.wp(17),
-                    ),
-                    SizedBox(height:responsive.dp(1.6)),
-                    Text("Hello again \n Welcome Back",
-                     textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: responsive.dp(1.6)
+              Positioned(
+                top: 100,
+                child: Column(
+                    children:<Widget>[
+                      IconContainer(
+                        size: responsive.wp(17),
                       ),
-                    )
-                  ] 
-              )
-            ),
-            LoginForm()
-          ]
+                      SizedBox(height:responsive.dp(1.6)),
+                      Text("Hello again \n Welcome Back",
+                       textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: responsive.dp(1.6)
+                        ),
+                      )
+                    ] 
+                )
+              ),
+              LoginForm()
+            ]
+          ),
         ),
       ),
     );
