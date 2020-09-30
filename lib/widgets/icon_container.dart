@@ -2,29 +2,31 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class IconContainer extends StatelessWidget {
-  const IconContainer({Key key}) : super(key: key);
+  final double size;
+  const IconContainer({Key key, @required this.size}) :  super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 110,
-      height: 110,
+      width: this.size,
+      height: this.size,
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(size *0.15),
         boxShadow: [
           BoxShadow(
-            color: Colors.black,
-            blurRadius: 10
+            color: Colors.black12,
+            blurRadius: 10,
+            offset: Offset(0, 10),
           )
           
         ]
       ),
-      padding: EdgeInsets.all(20),
+      padding: EdgeInsets.all(size * 0.15),
       child: Center(
         child: SvgPicture.asset("assets/icons/vacaciones-de-verano.svg", 
-        width: 80,
-        height: 80,),
+        width: size *0.6,
+        height: size *0.6),
       ),
     );
   }
