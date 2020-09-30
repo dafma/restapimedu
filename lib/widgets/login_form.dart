@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'input_text.dart';
 
 class LoginForm extends StatefulWidget {
   LoginForm({Key key}) : super(key: key);
@@ -16,12 +17,13 @@ class _LoginFormState extends State<LoginForm> {
       right: 20,
         child: Column(
         children:<Widget>[
-          TextFormField(
-            decoration: InputDecoration(
-              labelText: "EMAIL ADDRESS",
-              labelStyle: TextStyle(color: Colors.black45, fontWeight: FontWeight.w500)
-            ),
-          ),
+          InputText(
+            keyboardType: TextInputType.emailAddress,
+            label: "EMAIL ADDRESS"),  
+          InputText(
+            obscureText: true,
+            label: "PASSWORD"
+          ),        
         ]
       ),
     );
