@@ -10,9 +10,11 @@ class LoginForm extends StatefulWidget {
 }
 
 class _LoginFormState extends State<LoginForm> {
-  
-  _submit(){
 
+  GlobalKey<FormState> _formKey = GlobalKey();
+
+  _submit(){
+    _formKey.currentState.validate();
   }
 
   @override
@@ -26,6 +28,7 @@ class _LoginFormState extends State<LoginForm> {
             maxWidth: responsive.isTablet?400:250,
           ),
           child: Form(
+            key: _formKey,
             child: Column(
             children:<Widget>[
               InputText(
