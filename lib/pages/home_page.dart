@@ -1,6 +1,7 @@
 import 'package:curso_rest_api_loginv2/utils/responsive.dart';
 import 'package:curso_rest_api_loginv2/widgets/circle.dart';
 import 'package:curso_rest_api_loginv2/widgets/icon_container.dart';
+import 'package:curso_rest_api_loginv2/widgets/login_form.dart';
 
 import 'package:flutter/material.dart';
 
@@ -67,6 +68,7 @@ class _HomePageState extends State<HomePage> {
                   ] 
               )
             ),
+            LoginForm()
           ]
         ),
       ),
