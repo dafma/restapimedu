@@ -28,9 +28,10 @@ class _HomePageState extends State<HomePage> {
           FocusScope.of(context).unfocus();
 
         },
-        child: Container(
+        child: SingleChildScrollView(
+          child: Container(
           width: double.infinity,
-          height: double.infinity,
+          height: responsive.height,
           color: Colors.white,
           child: Stack(
             alignment: Alignment.center,
@@ -78,6 +79,8 @@ class _HomePageState extends State<HomePage> {
             ]
           ),
         ),
+          
+        ) 
       ),
     );
   }
