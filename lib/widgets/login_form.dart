@@ -20,7 +20,8 @@ class _LoginFormState extends State<LoginForm> {
         child: Container(
           // con el contrains decimos que tendremos una ancho mazimo de 400
           constraints: BoxConstraints(
-            maxWidth: 400,
+
+            maxWidth: responsive.isTablet?400:2500,
           ),
           child: Column(
           children:<Widget>[
